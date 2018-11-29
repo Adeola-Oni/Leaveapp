@@ -52,7 +52,7 @@ class Login extends Component{
             let emailDot =email.includes('.');
             let password = this.state.password
             if(emailAt === true && emailDot === true && password !== null){
-                axios.get('https://api.myjson.com/bins/alnui/staffs').then((res)=>{
+                axios.get('https://leaveappjson.herokuapp.com/staffs').then((res)=>{
                 let response = res.data;
                 for(let x of response){
                     if(x.email.toLowerCase() === this.state.email && x.password ===this.state.password){
