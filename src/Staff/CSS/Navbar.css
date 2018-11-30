@@ -19,7 +19,7 @@
 }
 
 .vgglogo{
-    width: 30vw;
+    width: 20vw;
 }
 
 .nav-content{
@@ -61,12 +61,12 @@
         width: 70%;
     }
     .vgglogo{
-        width: 50vw; 
+        width: 35vw; 
     }
 }
 
 @media only screen and (max-width : 497px){
     .vgglogo{
-        width: 60vw;
+        width: 45vw;
     }
 }

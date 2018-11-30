@@ -15,7 +15,7 @@ class errorPage extends Component{
                 <Particles params={{
             		particles: {
                         number: {
-                            value: 80,
+                            value: 20,
                             density: {
                               enable: true,
                               value_area: 500
@@ -30,7 +30,7 @@ class errorPage extends Component{
                         },
                         move: {
                             enable: true,
-                            speed: 15,
+                            speed: 2,
                             random: false,
                             straight: false,
                             bounce: false,
@@ -40,7 +40,22 @@ class errorPage extends Component{
                               rotateY: 1200
                             }
                         }
-            	}}}style={{position: "absolute", "z-index": -1}}/>
+                },
+                    interactivity: {
+                    events: {
+                      onhover: {
+                        enable: true,
+                        mode: "repulse"
+                      },
+                    },
+                    modes: {
+                      repulse: {
+                        distance: 100,
+                        duration: 0.4
+                      },
+                    }
+                  }
+                  }}style={{position: "absolute", "z-index": -1}}/>
                 
                 <div className="form" >
                     <h1 className='number'>4<span style={{color: "#51B74B"}}>O</span>4</h1>
