@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AdminSideNav = (()=>{
+const Sidebar = (()=>{
     return(
         <div style={{color: 'black'}}>
 
@@ -17,7 +17,7 @@ const AdminSideNav = (()=>{
                     <li><div class="divider"></div></li>
                     <li><a href="/engineers" style={{color: 'black'}}>ENGINEERS</a></li>
                     <li><div class="divider"></div></li>
-                    <li><a href="/eng" style={{color: 'black'}}>PEOPLE OPS</a></li>
+                    <li><a href="#!" style={{color: 'black'}}>SEE COMPLAINTS</a></li>
                 </ul>
             
         </div>
@@ -25,4 +25,4 @@ const AdminSideNav = (()=>{
     )
 })
 
-export default AdminSideNav;
+export default Sidebar;

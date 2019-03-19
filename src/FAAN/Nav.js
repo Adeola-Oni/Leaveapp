@@ -1,17 +1,15 @@
 import React from 'react';
-import './CSS/Nav.css'
+import './CSS/Nav.css';
+import Faanlogo from './CSS/download.png'
 
 const Nav = (()=>{
     return(
         <div class='navbar-fixed navbar'>
             <nav  className='nav '>
-                <div class="nav-wrapper">
-                    <a href="#!" class="brand-logo">FAAN LOGO</a>
-                    
-                </div>
+                <img className="brand-logo" src={Faanlogo} alt='FAAN LOGO' />
             </nav>
         </div>
     )
 })
-
+ 
 export default Nav;

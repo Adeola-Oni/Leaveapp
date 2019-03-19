@@ -1,3 +1,41 @@
 .body{
     background-color: blue;
 }
+.back_button{
+    cursor: pointer;
+    background-color: transparent;
+    padding: 7%;
+    color: black;
+    border: 2px solid #51B74B;
+    margin-left: 5%;
+}
+
+.policy_body{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    margin-top: 2%;
+}
+
+.colored_header{
+    background-color: #013042;
+    color: white;
+    padding: 0.5%;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+ol{
+    list-style-type: square;
+}
+
+table{
+    text-align: center;
+    margin: 1%;
+    width: 80%;
+}
+
+td, th{
+    text-align: center;
+    
+}

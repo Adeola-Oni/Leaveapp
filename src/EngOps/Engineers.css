@@ -12,7 +12,7 @@
 }
 
 .button{
-    width: 80%;
+    width: 100%;
     
 }
 .buttons{
@@ -37,4 +37,17 @@
     transform: rotate(90deg);
     transform-origin: left top 0;
     float: left;
+}
+
+.details_modal{
+    background-color: red;
+}
+
+.Modal_used{
+    color: red;
+}
+
+.edit_part{
+    padding-top: 5%;
+    text-align: center;
 }

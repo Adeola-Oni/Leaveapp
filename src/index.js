@@ -20,6 +20,7 @@ import Staffs from '../src/LineManager/Staffs';
 import Peopleops from '../src/LineManager/PeopleOps';
 import NotFound from '../src/Staff/errorPage';
 import Policies from '../src/Staff/Policies'
+import peopleOpsComplaints from '../src/PeopleOps/Complaints'
 
 // <------- FAAN WORK ----- >
 
@@ -53,16 +54,16 @@ ReactDOM.render(
             <Route exact path='/peopleops'  component={Peopleops}/>
             <Route exact path='/policies'  component={Policies}/>
             <Route exact path='/sbugraph'  component={SBU}/>
-            <Route component={NotFound}/>
-
-            {/* <Route exact path='/engp'  component={EngPeople}/> */}
-            <Route exact path='/eng'  component={PeopleOps}/>
-            {/* <-----FAAN WORK -----> */}
             <Route exact path='/faan'  component={FAANLogin}/>
             <Route exact path='/page'  component={Page}/>
             <Route exact path='/transactions'  component={Transactions}/>
             <Route exact path='/banks'  component={Banks}/>
-
+            {/* <Route exact path='/engp'  component={EngPeople}/> */}
+            <Route exact path='/eng'  component={PeopleOps}/>
+            <Route exact path='/peopleops'  component={peopleOpsComplaints}/>
+            {/* <-----FAAN WORK -----> */}
+            
+            <Route component={NotFound}/>
         </Switch>
     </Router>
         , document.getElementById('root'));

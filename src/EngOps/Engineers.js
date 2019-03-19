@@ -10,6 +10,7 @@ class Engineers extends Component{
     state={
         staffs: [],
         open: false,
+        openAdd: false,
         staffRequest: [],
         annual: 0,
         casual: 0,
@@ -54,6 +55,31 @@ class Engineers extends Component{
         }).catch(err=>console.log(err));
         
     };
+
+    onOpenAdditionModal=(e)=>{
+        let id = e.target.value
+        axios.get('https://leaveappjson.herokuapp.com/users/'+id+'/requests').then(res=>{
+            let response = res.data;
+            this.getDetails(id);
+            let staffRequest = res.data;
+            this.setState({})
+            this.setState({staffRequest})
+            axios.get('https://leaveappjson.herokuapp.com/staffs/'+id).then(res=>{
+                let response = res.data;
+                this.setState({name: response.name,
+                    SBU: response.SBU,
+                    competency: response.competency,
+                    lineManagerName: response.lineManagerName,
+                    email: response.email,
+                    openAdd: true
+                });
+            })
+        }).catch(err=>console.log(err));
+    }
+
+    onCloseAdditionModal=(e)=>{
+        this.setState({ openAdd: false });
+    }
     
     onCloseModal = () => {
         this.setState({ staffRequest: [],
@@ -121,7 +147,7 @@ class Engineers extends Component{
     }
 
     render(){
-        let {staffs, open, staffRequest}= this.state;
+        let {staffs, open, openAdd, staffRequest}= this.state;
         let staff;
 
         return(
@@ -136,7 +162,7 @@ class Engineers extends Component{
                 
                 <div class="row" style={{'margin-left': '10%'}}>
                     
-                    <div class="col s9 offset-s2">
+                    <div class="col s11 offset-s2">
                         <br/>
                         <div class="input-field col s4 offset-s8">
                             <i class="material-icons prefix" style={{color: '#51B74B'}}>search</i>
@@ -165,9 +191,34 @@ class Engineers extends Component{
                                                 <tr>
                                                     <td>
                                                         <div>
-                                                            <a class="btn-floating waves-effect btn-small waves-light red">
-                                                                <i class="material-icons">add</i>
-                                                            </a>
+                                                            {/* <a href='#!' value={x.id} class="btn-floating waves-effect btn-small waves-light red" 
+                                                            onClick={(e)=>this.onOpenAdditionModal(e)}>
+                                                                <i class="material-icons" >add</i>
+                                                            </a> */}
+                                                            <button class='buttons btn button' style={{"background-color": "orangered"}}
+                                                            value= {x.id} onClick={(e)=>this.onOpenAdditionModal(e)}>
+                                                            Edit</button>
+                                                            <Modal open={openAdd} onClose={this.onCloseAdditionModal}>
+                                                                <p>NAME: {this.state.name}</p>
+                                                                <p>SBU: {this.state.SBU}</p>
+                                                                <p>COMPETENCY: {this.state.competency}</p>
+                                                                <p>LINE MANAGER: {this.state.lineManagerName}</p>
+                                                                
+                                                                <p>EMAIL: <span style={{color: 'blue'}}>{this.state.email}</span></p>
+                                                                <p className='edit_part'>EDIT </p>
+                                                                <form>
+                                                                    <input>
+                                                                    </input>
+
+                                                                    <select>
+                                                                        <option>select number of days</option>
+                                                                        <option>1</option>
+                                                                        <option>1</option>
+                                                                        <option>1</option>
+                                                                        <option>1</option>
+                                                                    </select>
+                                                                </form>
+                                                            </Modal>
                                                         </div>
                                                     </td>
                                                     <td>{x.name}</td>
@@ -178,7 +229,7 @@ class Engineers extends Component{
                                                     <td>
                                                         <div>
                                                             <button class='btn button buttons' value= {x.id} onClick={(e)=>this.onOpenModal(e)}>Details</button>
-                                                            <Modal open={open} onClose={this.onCloseModal} >
+                                                            <Modal open={open} onClose={this.onCloseModal} class='details_modal'>
                                                                 <p>NAME: {this.state.name}</p>
                                                                 <p>SBU: {this.state.SBU}</p>
                                                                 <p>COMPETENCY: {this.state.competency}</p>

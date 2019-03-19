@@ -53,6 +53,12 @@
       "email": "admin@venturegardengroup.com",
       "password": "Admin",
       "lineManager": "admin"
+    },
+    {
+      "id": 6,
+      "email": "peopleops@venturegardengroup.com",
+      "password": "PeopleOps",
+      "lineManager": "peopleops"
     }
   ],
   "requests": [

@@ -45,12 +45,12 @@ class Page extends Component{
 
                 <div class='col s9'>
                     <div className="dashboard">
-                        <div class="card">
+                        {/* <div class="card">
                             <div class='row name'>
                                 <div class='col s8 '><h5 >Dashboard</h5></div>
                                 <div class='col s4'></div>
                             </div>
-                        </div>
+                        </div> */}
                     </div><br />
 
                     <div class='row'>
